@@ -16,7 +16,7 @@ public class ReservationsDTO {
     private Long id;
 
     @NotNull
-    private LocalDate date;
+    private LocalDate reservationDate;
 
     @NotNull
     @Schema(type = "string", example = "18:30")

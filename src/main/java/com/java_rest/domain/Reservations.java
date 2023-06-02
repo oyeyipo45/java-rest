@@ -41,7 +41,7 @@ public class Reservations {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private LocalDate reservationDate;
 
     @Column(nullable = false)
     private LocalTime startTime;
@@ -59,12 +59,5 @@ public class Reservations {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @CreatedDate
-    @Column(nullable = false, updatable = false)
-    private OffsetDateTime dateCreated;
-
-    @LastModifiedDate
-    @Column(nullable = false)
-    private OffsetDateTime lastUpdated;
 
 }
