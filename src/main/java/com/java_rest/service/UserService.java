@@ -50,14 +50,10 @@ public class UserService {
 
     private UserDTO mapToDTO(final User user, final UserDTO userDTO) {
         userDTO.setId(user.getId());
-        userDTO.setDateCreated(user.getDateCreated());
-        userDTO.setDateUpdated(user.getDateUpdated());
         return userDTO;
     }
 
     private User mapToEntity(final UserDTO userDTO, final User user) {
-        user.setDateCreated(userDTO.getDateCreated());
-        user.setDateUpdated(userDTO.getDateUpdated());
         return user;
     }
 

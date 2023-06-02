@@ -24,7 +24,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-public class Reservations {
+public class Reservation {
 
     @Id
     @Column(nullable = false, updatable = false)
@@ -41,7 +41,7 @@ public class Reservations {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate reservationDate;
+    private LocalDate date;
 
     @Column(nullable = false)
     private LocalTime startTime;
@@ -49,15 +49,16 @@ public class Reservations {
     @Column(nullable = false)
     private LocalTime endTime;
 
-    @Column(nullable = false)
-    private OffsetDateTime dateCreated;
-
-    @Column(nullable = false)
-    private OffsetDateTime dateUpdated;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private OffsetDateTime dateCreated;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private OffsetDateTime lastUpdated;
 
 }
