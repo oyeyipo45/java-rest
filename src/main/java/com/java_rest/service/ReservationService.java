@@ -56,7 +56,7 @@ public class ReservationService {
     private ReservationDTO mapToDTO(final Reservation reservation,
             final ReservationDTO reservationDTO) {
         reservationDTO.setId(reservation.getId());
-        reservationDTO.setDate(reservation.getDate());
+        reservationDTO.setReservationDate(reservation.getReservationDate());
         reservationDTO.setStartTime(reservation.getStartTime());
         reservationDTO.setEndTime(reservation.getEndTime());
         reservationDTO.setUser(reservation.getUser() == null ? null : reservation.getUser().getId());
@@ -65,7 +65,7 @@ public class ReservationService {
 
     private Reservation mapToEntity(final ReservationDTO reservationDTO,
             final Reservation reservation) {
-        reservation.setDate(reservationDTO.getDate());
+        reservation.setReservationDate(reservationDTO.getReservationDate());
         reservation.setStartTime(reservationDTO.getStartTime());
         reservation.setEndTime(reservationDTO.getEndTime());
         final User user = reservationDTO.getUser() == null ? null : userRepository.findById(reservationDTO.getUser())

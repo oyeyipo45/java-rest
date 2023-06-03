@@ -4,8 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 
 @Getter
@@ -15,7 +15,7 @@ public class ReservationDTO {
     private Long id;
 
     @NotNull
-    private LocalDate date;
+    private LocalDate reservationDate;
 
     @NotNull
     @Schema(type = "string", example = "18:30")
